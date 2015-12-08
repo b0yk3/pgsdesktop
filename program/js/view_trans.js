@@ -1,9 +1,8 @@
-        
 var blanktr =
     {
 "trid": "",
 "trdate": "",
-"trorg": "",
+"trorg": "JKT",
 "trservpoint": "",
 "trtypeofservice":"",
 "trdst": "",
@@ -31,11 +30,13 @@ var toolbar = {
 		elements:[
 			{ view:"label", label:"(C) 2015"},
 			{ view:"button", value:"Add", width:100, click:function(){
-				var row = $$("grid").add(blanktr);
-				$$("grid").editCell(row, "trid")
+				var row = $$("grid").add(blanktr);		
+                $$("grid").select(row,"trid");
+           //     $$("tab02").show();
 			}},
           {view: "button" , value: "Save" , width: 100, click: function(){
               $$("myfrm").save();
+             // $$("tab01").show();
           }},
 			{ view:"button", value:"Remove", width:100, click:function(){
 				var id = $$("grid").getSelectedId();
@@ -246,9 +247,12 @@ webix.ui({
     { type:"header", template:"Preview" },
                toolbar,
     { view: "tabview",
+     multiview: {
+  fitBiggest:true
+},
       cells: [                  
-        {header: "grid" ,  body:mygrid},
-        {header: "input" , body:{ view:"scrollview" , body:vfrm }}
+        {id: "tab01" , header: "grid" ,  body:mygrid},
+        {id: "tab02" , header: "input" , body:{ view:"scrollview" , body:vfrm }}
              ]
 }
   ]
