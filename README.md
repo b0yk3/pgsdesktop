@@ -1,6 +1,6 @@
 # pgsdesktop
 pgs desktop
 
-User for internal purpose only (C) paketku.
+Use for internal purpose only (C) paketku.
 
 need more info ??, send me email.
